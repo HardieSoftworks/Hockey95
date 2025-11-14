@@ -1,0 +1,21 @@
+AI has BT and BB
+BT is how tasks get chosen
+BB stores variable data to help make those decisions
+
+Composites (AKA subtrees)
+examples: sequence, selector
+Logic for moving to different nodes in a tree
+
+Services allow us to do checks and update BB variables
+event Receive activation AI
+Store updates variables in BlackBoardKeySelector varaibles in the service (instance editable)
+Set value as...
+Services can be added to tasks. can help getting the vars needed for the BB and then the task
+
+Tasks are logic that the AI tries to implement
+Event Receive Execute AI. when finished, use FinishExecute node with success=true
+
+Decorators perform checks to direct BT flow
+
+Paper on how to move AI
+https://red3d.com/cwr/steer/gdc99/

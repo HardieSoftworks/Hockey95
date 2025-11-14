@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ThumbstickCustomizer",
+	"Description": "Plugin component that allows thumbstick and keyboard axis customization.",
+	"Category": "Other",
+	"CreatedBy": "Hardie Softworks",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.6.0",
+	"CanContainContent": true,
+	"Installed": true
+}

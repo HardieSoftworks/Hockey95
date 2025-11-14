@@ -1,0 +1,23 @@
+https://www.youtube.com/watch?v=bfncD4JKTag&list=PLEZjyElXPz2RQGA0REYMz_3PVHoiwUknY&index=1
+wants to make a movement component
+derives compn class from PawnMovement (why?)
+
+then he makes structs for accepting physics forces
+
+he does a phys thread game thread separation
+
+how do collisions work with async phys?
+
+Some problems I found when doing his tutorial:
+Async physics thread is LIMITED by game thread. If i set AsyncPhysThread to 60 ticks/s and i drop the game thread to 20 ticks/s, the phys thread now runs at 20 fps. Honestly, this sucks, so what is the point.
+
+maybe i could build it around fps=30 and have determinsitic phys for 30 fps? Try it.
+
+Drawbacks or Failures for different methods in netplay
+
+Stock UE physics
+can't easily re-sim when getting data from server. this is a dealbreaker
+
+Jolt
+how do i get inputs into the subsystem?
+does addForce stack if game framerate is higher than Jolt subsystem?

@@ -1,0 +1,19 @@
+if horizontally inverting a sprite, be careful to paint the "UV"s properly; If not painted properly (or simply horizontally inverted) then logos and numbers and other details will be also horizontally inverted.
+
+Arms and legs, on the other hand can have red and blue inverted pretty quickly. Select the arm+leg and go to 
+Edit>Adjustments>Hue/Saturation.
+Select HSV button.
+For Blue and Red, select only R ,B, and A and crank H to 180. The arm+leg will change to the "opposite" colour and maintain its "black" level.
+
+Things I have learned. It is easier to have symmetry and just use palette colours when possible. Might not be possible for things like jerseys and socks
+
+ROTATING: This tool is fucking amazing: https://torcado.com/cleanEdge/
+
+TODO: in next version:
+-add additional "stripes" to jerseys (in 3's)
+	-for instance, top part of arms need another stripe, bottom and top parts of front/back jersey need extra, etc
+-consider a middle pixel on front/back.
+	pros: helps with numbers!
+	cons: sucks for logos! 
+		puts thing off-center
+-Make sprites in this order: N, NE, E...

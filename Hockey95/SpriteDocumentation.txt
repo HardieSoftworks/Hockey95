@@ -1,0 +1,29 @@
+How Sprite Recolouring works.
+
+Notes first:
+-Make sure when the ColourMappedSprite is changed that the sprites made from previous versions are updated to include any pixel additions, like a piece of hair that was added to the silhouette, the sprite must be updated to account for that!
+
+Sprites
+Sprites are made from a texture that is manually imported. Create sprites and flipbooks the normal UE5 way. Update them if the texture changes.
+
+Recolouring is done through render textures (RTs) and materials.
+
+There is a combination of Editor functions, save game objects, and RT drawing + materials that makes the effect.
+
+Step 1: upload ColourMappedSprite texture. There may be multiple! Settings should be 2D pixels, UserInterface (RGBA8), A and Y clamp
+Step 2: Make sprites from the textures. Remember that any changes to the source texture may need alterations on the sprite areas
+Step 3: An actor called TexturePostProcessor has a bunch of editor functions. Fill in the texture array of ALL textures you want to use (whether they are ColourMaps, ReColourMaps, or ColourMappedSprites) and run the editor fn called ED_BatchImportTextures
+
+This function stores the textre as an array of coordinates and colours, for ease of use gathering later.
+
+Step 4: BP_TestFlipbookUpdates is an actor that can be placed in the level. Enter the Colour Kit name (from the saved object above) and a char head name. When Play is hit, the actor calls the TexturePostProcessor function called RecolourCharTextureWithHead.
+
+It's a complex beast but essentially it recolours a ColourMappedSprite AND adds a head dynamically. It spits out an RT. The RT is set as a paramater in the dynamic material.
+
+Step 5: The material combines this texture with a shading overlay. The shading overlay is a separate texture that also must be imported manually into the editor as an asset.
+
+I have implemented a mirror "map" for jersey pixels, arms pixels, leg pixels, and pant pixels. This enables mirrored sprites which maintain logos, numbers, etc
+
+TODO: in the final version, add a line(s) to arms (and maybe legs?) so that there are at least 3 lines per section. Arm example: 3 lines for shoulder, 3 lines for upper arm, 4 for mid arm, 3 for lower arm (currently 3,2,4,3). this will allow "barber pole" jerseys.
+
+TODO: Figure out a tweak for adding the head where it can be drawn on, say the jersey, if the beard over laps, but otherswise does not. if possible.
