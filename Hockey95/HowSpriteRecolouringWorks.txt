@@ -1,0 +1,19 @@
+What is the need for sprite recolouring?
+The game will have lots of different teams and each player will have hundreds of sprites, so it is not efficient to draw different team variations of team sprites. Rather, it would be better if there was a way to auto-recolour them
+
+There are 3 main textures that make this work:
+1. Index texture : this contains information about UVs in the R and B channel. The G channel is used for colouring sprites and keeping track of things visually
+2. Sprite texture: these textures are used for player sprites (and maybe more). They contain only colours from the index texture. When the colours are read by the engine, the RB channels of each pixel can be used to pick out colours from a different texture called a...
+3. Recolour texture: These textures contain the colours for recolouring the Sprite texture.
+
+How does it work?
+
+1. Create an Index texture. This is done in whatever program does .pngs. I use Aseprite. The texture must have a R channel gradient layer going one way and a B channel gradient layer going the other way. The third layer is the G layer, and G pixels can be placed in a map-like way that makes sense visually. Add these layers together.
+2. Create a Sprite texture using only pixels from the index texture that are green. This helps keep things visually trackable.
+3. Create a recolour texture. First, copy the index texture from step 1. Then, wherever there is G, put whatever colour you want. These colours will be used to recolour the sprite texture.
+
+4. Import the sprite and recolour textures into UE5.
+
+Now comes the logic in Unreal. I use an actor component to pass information to two materials. One material modifies the recolour texture based on parameters like jersey number and head options. This material is redrawn to a render target texture, and then used as an input in the second material. The second material reads the Sprite texture and uses the RB values to reference UVs on the redrawn recolour texture. The colours in the referenced UVs are used to recolour the sprite.
+
+This is a high level description and the implementation is very complex, but that's pretty much what it does.
