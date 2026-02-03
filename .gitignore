@@ -73,3 +73,6 @@ Hockey95/Plugins/**/Intermediate/*
 # Cache files for the editor to use
 Hockey95/DerivedDataCache/*
 
+#packages
+Packages/*
+
