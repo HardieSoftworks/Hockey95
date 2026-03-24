@@ -1,0 +1,5 @@
+https://dev.epicgames.com/documentation/en-us/unreal-engine/overview-of-state-tree-in-unreal-engine#selectinganewstate
+
+https://www.youtube.com/watch?v=Bu3eejZasTc&list=PLoReGgpfex3x73FUEWY1W0HGXVGsFAw5E&index=9
+
+https://www.youtube.com/watch?v=MuWRxuz1bjE

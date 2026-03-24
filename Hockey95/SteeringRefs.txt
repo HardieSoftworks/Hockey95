@@ -1,0 +1,5 @@
+https://www.red3d.com/cwr/steer/gdc99/
+
+https://editor.p5js.org/codingtrain/sketches/RgmPS8vXO
+
+https://code.tutsplus.com/understanding-steering-behaviors-collision-avoidance--gamedev-7777t
