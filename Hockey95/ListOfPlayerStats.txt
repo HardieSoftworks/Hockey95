@@ -1,0 +1,37 @@
+Skating
+	Agility
+	Acceleration
+	Forward Speed
+	Backward Speed
+Shooting
+	Forehand
+		Release Speed
+		Power
+		Accuracy
+	Backhand
+		Release Speed
+		Power
+		Accuracy
+Faceoffs
+	Forehand
+	Backhand
+Checking
+	Stick Checking
+	Body Checking
+Passing
+	Forehand
+		Power
+		Sauce
+	Backhand
+		Power
+		Sauce
+Stamina - energy in game
+Fortitude - when injured, high fortitude reduces injury penalty
+Resilience - high resiliency means lower chance for injury
+Fighting
+Puck control
+Tipping
+Pass blocking
+Shot Blocking
+Weight
+Balance
